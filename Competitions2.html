@@ -1,0 +1,19 @@
+var locations = [
+	{name:"Cleveland"}, {name:"Columbus"}, {name:"Cincinnati"}
+	];
+	
+var competitions = [{name:"Cleveland", duration:4},{name:"Columbus", duration:7},{name:"Cincinnati", duration:3}];
+	
+	var newName = $("#location-dropdown").find("option:selected").val();
+	var newDur = $("#slider-0").val();
+	var newComp = {name:newName, duration:newDur};
+	competitions.push(newComp);
+for (var i = 0; i < locations.length; i++) {
+		$("#location-dropdown").append("<option value='"+locations[i].name+"'>"+locations[i].name+"</option>");
+	}
+	
+	for(var c = 0; c < competitions.length; c++){
+		$("#join-table").append("<div style='border:2px black solid; padding:10px; margin-bottom:1px;font-size:15px;'><tr>"+competitions[c].name+"</tr><div style='float:right'>"+competitions[c].duration+" days.</div></div>");
+	}
+	
+	

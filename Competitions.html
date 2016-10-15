@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+</head> 
+<body> 
+
+<div data-role="page">
+
+	<div id="competition-head" style="text-align:center;margin-top:50px;">
+	    <h2>Compete to see who has contributed the most to the cause of hunger!</h2>
+	</div>
+
+	<div data-role="content" id="competition-container" style="margin-top:50px;">
+	    <a href="#create-competition" data-role="button">Create Competition</a>
+	    <a href="#join-competition" data-role="button">Join Competition</a>
+	</div>
+
+</div>
+
+<div data-role="page" id="create-competition">
+
+	<div id="create-head" style="text-align:center">
+	    <h1>Create a Competition</h1>
+	    
+	</div>
+
+	<div data-role="content" id="create-container" style="margin-top:170px;">
+	    <select id='location-dropdown' data-native-menu='false' data-dividertheme='a' data-theme='c' style="margin-bottom:20px;">
+			<option value='Select a location'>Select a location</option> 
+ 		</select>
+ 		<label for="slider-0">Duration (Days):</label>
+        <input type="range" name="slider" id="slider-0" value="5" min="0" max="10" data-highlight="true" data-mini="true" />
+        <div style="margin-top:100px;">
+            <a href="#" data-role="button" data-theme="b" id="create-button">Create</a>
+        </div>
+	</div>
+
+</div>
+
+<div data-role="page" id="join-competition">
+
+	<div id="join-head" style="text-align:center">
+	    <h1>Join a Competition</h1>
+	    
+	</div>
+
+	<div data-role="content" id="join-container" style="margin-top:170px;">
+	    <div id="join-table"></div>
+        <div style="margin-top:100px;">
+            <a href="#" data-role="button" data-theme="b" id="join-button">Join</a>
+        </div>
+	</div>
+
+</div>
+
+</body>
+</html>
