@@ -1,0 +1,129 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+  <script>
+      function comparePoints(a,b){
+		if(a.points < b.points){
+			return -1;
+		}
+		if(a.points > b.points){
+			return 1;
+		}
+		return 0;
+	}
+	var leaderboards = [
+	{name:"National"}, {name:"Local"}, {name:"Group"}
+	];
+
+	var nUsers = [
+		{
+			name:"Albert", points:150
+		},
+		{
+			name:"Chuck", points:190
+		},
+		{
+			name:"Blake", points:250
+		},
+		{
+			name:"Fred", points:130
+		},
+		{
+			name:"Jim", points:110
+		},
+		{
+			name:"Tom", points:210
+		},
+		{
+			name:"John", points:200
+		},
+	];
+
+	var lUsers = [
+		{
+			name:"Fred", points:130
+		},
+		{
+			name:"Jim", points:110
+		},
+		{
+			name:"Tom", points:210
+		},
+		{
+			name:"John", points:200
+		},
+	];
+
+	var gUsers = [
+		{
+			name:"Chun", points:90
+		},
+		{
+			name:"Hilbert", points:20
+		},
+		{
+			name:"Brian", points:40
+		},
+		{
+			name:"Gray", points:50
+		},
+		
+	];
+	nUsers.sort(comparePoints);
+	lUsers.sort(comparePoints);
+	gUsers.sort(comparePoints);
+	
+
+
+	for (var i = 0; i < leaderboards.length; i++) {
+		$("#leaderboard-dropdown").append("<option value='"+leaderboards[i].name+"'>"+leaderboards[i].name+"</option>");
+	}
+
+	$("#leaderboard-dropdown").on("change", function(e){
+	    $("#leaderboard-name").html("");
+	    $("#leaderboard-container").html("");
+		option = $("#leaderboard-dropdown").find("option:selected").val();
+		if(option == "National"){
+		    $("#leaderboard-name").append('<h1>National Leaderboard</h1>');
+			for(var i = 1; i < nUsers.length+1; i++){
+				$("#leaderboard-container").append("<div style='border:1px black solid; padding:10px;'><tr>"+i+". "+nUsers[i-1].name+"</tr><div style='float:right'>Points: "+nUsers[i-1].points+"</div></div>");
+			}
+		} else if(option == "Local"){
+		    $("#leaderboard-name").append('<h1>Local Leaderboard</h1>');
+			for(var c = 1; c < lUsers.length+1; c++){
+				$("#leaderboard-container").append("<div style='border:1px black solid; padding:10px;'><tr>"+c+". "+lUsers[c-1].name+"</tr><div style='float:right'>Points: "+lUsers[c-1].points+"</div></div>");
+			}
+		} else if(option == "Group"){
+		    $("#leaderboard-name").append('<h1>Group Leaderboard</h1>');
+			for(var x = 1; x < gUsers.length+1; x++){
+				$("#leaderboard-container").append("<div style='border:1px black solid; padding:10px;'><tr>"+x+". "+gUsers[x-1].name+"</tr><div style='float:right'>Points: "+gUsers[x-1].points+"</div></div>");
+			}
+		}
+	});
+  </script>
+</head> 
+<body> 
+
+<div data-role="page">
+    <select id='leaderboard-dropdown' data-native-menu='false' data-dividertheme='a' data-theme='a' style="">
+						<option value='Select a unit'>Select a leaderboard</option> 
+					</select>
+	<div id="leaderboard-name" style="text-align:center">
+        
+	</div>
+
+	<div data-role="content">
+	    <div id="leaderboard-container">
+        </div>
+	</div>
+	
+
+</div>
+
+</body>
+</html>
