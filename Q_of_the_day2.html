@@ -1,0 +1,37 @@
+var array_of_questions = ["43.1 million people (13.5 percent) were in poverty.", "20 million people were in poverty",
+  "24.4 million (12.4 percent) people ages 18-64 were in poverty.", "15 million people, ages 18-64, were in poverty",
+  "14.5 million (19.7 percent) children under the age of 18 were in poverty.","10 million children under the age of 18 were in poverty",
+  "4.2 million (8.8 percent) seniors 65 and older were in poverty.","2 million seniors 65 and older were in poverty",
+  "the overall poverty rate according to the Supplemental Poverty Measure is 14.3 percent, significantly higher than the official poverty rate of 13.5 percent.","the overall poverty rate was lower than the official Poverty rate of 13.5 percent",
+  "under the Supplemental Poverty Measure, there were 45.7 million people living in poverty", "there were 35 million people living in poverty"];
+ 
+
+var randomQnumber = Math.floor(Math.random() * array_of_questions.length);
+
+//randomQnumber=0;
+document.getElementById('question').innerHTML= array_of_questions[randomQnumber];
+
+var user_answer_true = "";
+var user_answer_false = "";
+
+
+function return_answer(){
+
+  user_answer_true = document.getElementById('true_b').checked;
+  user_answer_false = document.getElementById('false_b').checked;
+
+if (user_answer_true!=user_answer_false){
+
+if (randomQnumber % 2 === 0 && user_answer_true)
+  {
+        document.getElementById('response').innerHTML="Congradulations! You're correct"
+  }
+else if (randomQnumber % 2 !== 0 && user_answer_false)
+  {
+        document.getElementById('response').innerHTML="Congradulations! You're correct"
+  }
+  
+else {document.getElementById('response').innerHTML="Sorry"}
+
+}
+}
