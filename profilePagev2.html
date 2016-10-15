@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html> 
+
+	<head> 
+	<title>My Page</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+</head> 
+
+
+<body> 
+
+
+
+<div data-role="page">
+
+	<div id="userName" style="text-align:center">
+	</div>
+	
+	
+    <div style="text-align:center">
+	<img id="profPic" src="http://i.imgur.com/tNEem3j.png" style="width:100px" >
+	</div>
+	
+	<div id="points" style="text-align:center">
+	</div>
+	
+	<div style="text-align:center">[POINTS]
+	</div>
+	
+	<div id="peopleSaved" style="text-align:center">
+	</div>
+	
+	<div style="text-align:center">[NUMBER]</div>
+	
+	<div id="bigTeam" style="text-align:center">
+	</div>
+	
+	<button>Manage Profile</button>
+
+</div>
+
+<script>
+    $("#userName").append("<h1>(Username here)</h1>");
+    $("#points").append("<p1>Grand Point Total:</p1>"); //todo, enter points from database
+    $("#peopleSaved").append("<p1>People Fed:</p1>");
+    $("#bigTeam").append("<h1>Team: Example</h1>");
+</script>
+
+</body>
+</html>
