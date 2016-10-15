@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+  <script>
+      var users = [
+		{
+			name:"Albert", points:30
+		},
+		{
+			name:"Chuck", points:10
+		},
+		{
+			name:"Blake", points:110
+		},
+		{
+			name:"Fred", points:50
+		},
+		{
+			name:"Jim", points:70
+		},
+		{
+			name:"Tom", points:25
+		},
+		{
+			name:"John", points:15
+		},
+	]
+	function comparePoints(a,b){
+		if(a.points > b.points){
+			return -1;
+		}
+		if(a.points < b.points){
+			return 1;
+		}
+		return 0;
+	}
+    users.sort(comparePoints);
+	for(var i = 1; i < users.length+1; i++){
+		$("#leaderboard-container").append("<div style='border:1px black solid;'><tr>"+i+". "+users[i-1].name+"</tr><div style='float:right; margin-right:10px;'>Points: "+users[i-1].points+"</div></div>");
+	}
+  </script>
+</head> 
+<body> 
+
+<div data-role="page">
+	<div id="leaderboard-name" style="text-align:center">
+        <h1>National Leaderboard</h1>
+	</div>
+
+	<div data-role="content" id="leaderboard-container">
+	</div>
+
+</div>
+
+</body>
+</html>
